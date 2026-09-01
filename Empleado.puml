@@ -1,0 +1,44 @@
+@startuml
+' Clase abstracta Empleado
+abstract class Empleado {
+     - nombre : String
+    - cedula : String
+    # sueldoBase : double
+    - id : int
+    -{static}totalEmpleados : int
+    -{static} proximoId : int
+    + Empleado(nombre:String, cedula:String, sueldoBase:double)
+    {abstract} + calcularSueldo() : double
+    {abstract} + obtenerDetalles() : String
+    +{static} obtenerTotalEmpleados() : int
+    +{static} mostrarEstadisticas(totalNomina:double) : void
+    
+}
+
+' Subclases
+class Gerente {
+    + calcularSueldo() : double
+    + obtenerDetalles() : String
+}
+
+class Supervisor {
+    + calcularSueldo() : double
+    + obtenerDetalles() : String
+}
+
+class Obrero {
+    + calcularSueldo() : double
+    + obtenerDetalles() : String
+}
+
+' Clase principal
+class NominaEmpresa {
+    + main(args : String[]) : void
+}
+
+' Relaciones
+Empleado <|-- Gerente
+Empleado <|-- Supervisor
+Empleado <|-- Obrero
+NominaEmpresa --> Empleado
+@enduml
