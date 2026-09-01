@@ -1,0 +1,44 @@
+@startuml
+abstract class Animal {
+    + hacerSonido() : void
+    + moverse() : void
+}
+
+class Perro {
+    + hacerSonido() : void
+    + moverse() : void
+}
+
+class Gato {
+
+    + hacerSonido() : void
+    + moverse() : void
+}
+
+class Pajaro {
+
+    + hacerSonido() : void
+    + moverse() : void
+}
+
+class Vaca {
+    + hacerSonido() : void
+    + moverse() : void
+}
+
+class Serpiente {
+    + hacerSonido() : void
+    + moverse() : void
+}
+class Lobo {
+    + hacerSonido() : void
+    + moverse() : void
+}
+
+Animal <|-- Perro
+Animal <|-- Gato
+Animal <|-- Pajaro
+Animal <|-- Vaca
+Animal <|-- Serpiente
+Animal <|-- Lobo
+@enduml
