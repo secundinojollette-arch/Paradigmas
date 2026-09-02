@@ -1,20 +1,18 @@
-public int sumar(int a, int b) {
+public class Calculador {
+    public int add(int a, int b) {
         return a + b;
     }
-
-    public int sumar(int a, int b, int c) {
+    public int add(int a, int b, int c) {
         return a + b + c;
     }
-
-    public double sumar(double a, double b) {
+    public double add(double a, double b) {
         return a + b;
     }
-
     public static void main(String[] args) {
-        Calculadora2 calculadora = new Calculadora2();
-
-        System.out.println("Suma de enteros: " + calculadora.sumar(5, 10));
-        System.out.println("Suma de tres enteros: " + calculadora.sumar(5, 10, 15));
-        System.out.println("Suma de numeros de punto flotante: " + calculadora.sumar(3.5, 2.8));
+        Calculador calc = new Calculador();
+        System.out.println("Sum of 2 integers: " + calc.add(5, 3));
+        System.out.println("Sum of 3 integers: " + calc.add(1, 2, 3));
+        System.out.println("Sum of 2 doubles: " + calc.add(2.5, 3.7));
     }
 }
+

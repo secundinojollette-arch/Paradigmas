@@ -54,7 +54,6 @@ class Obrero extends Empleado {
     }
 }
 
--.
 class Supervisor extends Empleado {
     public Supervisor(String nombre, String cedula, double sueldoBase) {
         super(nombre, cedula, sueldoBase);
@@ -89,7 +88,7 @@ class Gerente extends Empleado {
 }
 
 
-public class NominaEmpresa {
+public class Empleado {
     
     public static void main(String[] args) {
     

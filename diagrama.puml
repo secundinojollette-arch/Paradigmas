@@ -1,0 +1,13 @@
+@startuml
+class Vehiculo{
+# modelo: String
+#año : int
++ Vehiculo(modelo : String, año : int)
++ mostrarInfo() : void
+}
+class Auto extends Vehiculo{
+    - puertas : int
+    + Auto(modelo : String, año : int, puertas :int)
+}
+Vehiculo <|-- Auto
+@enduml

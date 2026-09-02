@@ -2,11 +2,11 @@ public class Animales {
 
     // Clase abstracta base
     static abstract class Animal {
-        public abstract void hacerSonido();
-        public abstract void moverse();
+        public abstract void hacerSonido();// Metodo abstracto para hacer sonido 
+        public abstract void moverse(); // Métodp abstracto para hacer movimiento 
     }
 
-    // Subclases internas
+    // Subclases internas, donde perro hereda de animal y define sus comportamientos
     static class Perro extends Animal {
         @Override
         public void hacerSonido() {
@@ -17,6 +17,7 @@ public class Animales {
             System.out.println("El perro corre alegremente.");
         }
     }
+// Subclase Gato que hereda de animal
 
     static class Gato extends Animal {
         @Override
@@ -28,7 +29,7 @@ public class Animales {
             System.out.println("El gato camina sigilosamente.");
         }
     }
-
+// Subclase Pajaro que hereda de animal
     static class Pajaro extends Animal {
         @Override
         public void hacerSonido() {
@@ -39,7 +40,7 @@ public class Animales {
             System.out.println("El pájaro vuela por el cielo.");
         }
     }
-
+// Subclase Vaca que hereda de animal
     static class Vaca extends Animal {
         @Override
         public void hacerSonido() {
@@ -50,18 +51,18 @@ public class Animales {
             System.out.println("La vaca camina lentamente por el campo.");
         }
     }
-
-    static class Oveja extends Animal {
+// Subclase Serpiente que hereda de animal
+    static class Serpiente extends Animal {
         @Override
         public void hacerSonido() {
-            System.out.println("La oveja dice: ¡Beeee!");
+            System.out.println("La serpiente dice: ¡Sssss!");
         }
         @Override
         public void moverse() {
-            System.out.println("La oveja se mueve en grupo.");
+            System.out.println("La serpiente se desliza por el suelo.");
         }
     }
-
+// Subclase Lobo que hereda de animal
     static class Lobo extends Animal {
         @Override
         public void hacerSonido() {
@@ -69,25 +70,26 @@ public class Animales {
         }
         @Override
         public void moverse() {
-            System.out.println("El lobo se desplaza sigilosamente.");
+            System.out.println("El lobo corre.");
         }
     }
 
     // Método principal
     public static void main(String[] args) {
+        // Se crea un arreglo con diferentes tipos
         Animal[] animales = {
             new Perro(),
             new Gato(),
             new Pajaro(),
             new Vaca(),
-            new Oveja(),
+            new Serpiente(),
             new Lobo()
         };
-
+     // Recorremos el arreglo y ejecutamos los métodos de cada animal
         for (Animal a : animales) {
-            a.hacerSonido();
-            a.moverse();
-            System.out.println("--------------------");
+            a.hacerSonido(); // Cada animal muestra su sonido
+            a.moverse(); // Cada animal muestra cómo se mueve
+            System.out.println(); // Imprime una línea en blanco
         }
     }
 }
