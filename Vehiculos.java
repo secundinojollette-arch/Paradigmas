@@ -1,26 +1,33 @@
+// Clase base donde contiene atributos y metodos
 class Vehiculo {
-protected String modelo;
-    protected int anio;
-    protected double velocidad;
+    protected String modelo;   // Modelo del vehículo
+    protected int anio;        // Año de fabricación
+    protected double velocidad; // Velocidad actual
 
+    // Constructor
     public Vehiculo(String modelo, int anio) {
         this.modelo = modelo;
         this.anio = anio;
         this.velocidad = 0; // inicia en 0
     }
+    // Método para aumentar la velocidad
     public void acelerar(double incremento) {
         velocidad += incremento;
     }
+    // Método para reducir la velocidad (no puede ser negativa)
     public void frenar(double decremento) {
         velocidad = Math.max(0, velocidad - decremento);
     }
+    // Método para obtener el modelo
     public String obtenerModelo() {
         return modelo;
     }
+    // Método para mostrar detalles generales del vehículo
     public void mostrarDetalles() {
         System.out.println("Modelo: " + modelo + ", Anio: " + anio + ", Velocidad: " + velocidad + " km/h");
     }
 }
+// Subclase Auto hereda de Vehiculo y añade atributo puertas
  class Auto extends Vehiculo{
     protected int puertas;
 
@@ -35,9 +42,11 @@ protected String modelo;
         System.out.println("Puertas: " + puertas);
     }
 }
+//  Subclase Camion hereda de Vehiculo y añade carga máxima
  class Camion extends Vehiculo {
     protected double cargaMaxima;
-
+ 
+    // Método adicional para simular carga
     public Camion(String modelo, int anio, double cargaMaxima) {
         super(modelo, anio);
         this.cargaMaxima = cargaMaxima;
@@ -53,6 +62,7 @@ protected String modelo;
         System.out.println("Carga maxima: " + cargaMaxima + " kg");
     }
 }
+// Subclase AutoDeportivo hereda de Auto es el tercer nivel de herencia
  class AutoDeportivo extends Auto {
     protected double velocidadMaxima;
 
@@ -60,7 +70,7 @@ protected String modelo;
         super(modelo, anio, puertas);
         this.velocidadMaxima = velocidadMaxima;
     }
-
+// Método especial turbo aumenta la velocidad hasta un límite
     public void turbo() {
         System.out.println("Turbo");
         velocidad = Math.min(velocidad + 50, velocidadMaxima);
@@ -72,6 +82,7 @@ protected String modelo;
         System.out.println("Velocidad maxima: " + velocidadMaxima + " km/h");
     }
 }
+// Subclase Moto: hereda de Vehiculo y añade atributo sidecar
  class Moto extends Vehiculo {
     protected boolean tieneSidecar;
 
@@ -79,7 +90,7 @@ protected String modelo;
         super(modelo, anio);
         this.tieneSidecar = tieneSidecar;
     }
-
+ // Método para agregar sidecar
     public void agregarSidecar() {
         tieneSidecar = true;
     }
@@ -93,6 +104,7 @@ protected String modelo;
 
 public class Vehiculos {
      public static void main(String[] args) {
+         // Creamos un arreglo de Vehiculo con diferentes tipos
         Vehiculo[] vehiculos = new Vehiculo[4];
 
         vehiculos[0] = new Auto("Sedaan", 2020, 4);
@@ -104,6 +116,7 @@ public class Vehiculos {
             v.acelerar(30); 
             v.mostrarDetalles();          
         }
+        // Se usa el método turbo del AutoDeportivo
         AutoDeportivo ferrari = (AutoDeportivo) vehiculos[3];
         ferrari.turbo();
         ferrari.mostrarDetalles();
