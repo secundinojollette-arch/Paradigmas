@@ -1,0 +1,41 @@
+@startuml
+title Diagrama UML - Jerarquía de Vehículos
+class Vehiculo {
+    - modelo : String
+    - anio : int
+    - velocidad : double
+    + Vehiculo(modelo, anio)
+    + acelerar(incremento : double) : void
+    + frenar(decremento : double) : void
+    + obtenerModelo() : String
+    + mostrarDetalles() : void
+}
+class Auto {
+    - puertas : int
+    + Auto(modelo, anio, puertas)
+    + mostrarDetalles() : void
+}
+class Camion {
+    - cargaMaxima : double
+    + Camion(modelo, anio, cargaMaxima)
+    + cargar(peso : double) : void
+    + mostrarDetalles() : void
+}
+class AutoDeportivo {
+    - velocidadMaxima : double
+    + AutoDeportivo(modelo, anio, puertas, velocidadMaxima)
+    + turbo() : void
+    + mostrarDetalles() : void
+}
+class Moto {
+    - tieneSidecar : boolean
+    + Moto(modelo, anio, tieneSidecar)
+    + agregarSidecar() : void
+    + mostrarDetalles() : void
+}
+Vehiculo <|-- Auto
+Vehiculo <|-- Camion
+Vehiculo <|-- Moto
+Auto <|-- AutoDeportivo
+
+@enduml
